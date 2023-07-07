@@ -1,0 +1,21 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: nextGenAi-config-server
+  cloud:
+    config:
+      server:
+        # https://docs.spring.io/spring-cloud-config/docs/current/reference/html/#_spring_cloud_config_server
+        vault:
+          host: 192.168.100.2
+          port: 8200
+          scheme: http
+          backend: secret
+          default-key: application
+          profile-separator: ,
+          kv-version: 2
+          skip-ssl-validation: true
+          timeout: 5
+          namespace: null
